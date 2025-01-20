@@ -20,4 +20,10 @@ public class EditorMenus : EditorWindow
         //Destroy the GameObject after it is used
         GameObject.DestroyImmediate(tempGameObject);
     }
+
+    [MenuItem("Tools/Structurefy/Generate Scene")]
+    public static void GenerateScene()
+    {
+        Debug.Log("Not implemented: Generating scene");
+    }
 }
