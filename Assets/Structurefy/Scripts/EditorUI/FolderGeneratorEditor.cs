@@ -24,6 +24,11 @@ public class FolderGeneratorEditor : EditorWindow
     {
         PopulateList();
         
+        //TEMPORARY TO POPULATE IT
+        folderNames.Add("Test");
+        folderNames.Add("Test2");
+        folderNames.Add("Test3");
+        
         //Add a new dropdown and populate it
         if (sfconfFiles.Length > 0)
         {
@@ -43,11 +48,15 @@ public class FolderGeneratorEditor : EditorWindow
             GUILayout.Label("Folder: " + folderNames[i]);
             
             //Toggle
-            //selectedFolders[i] = GUILayout.Toggle(true, "", GUILayout.Width(20));
+            //selectedFolders[i] =
+            //GUILayout.Toggle(true, "", GUILayout.Width(20));
             
             //TODO: Create a toggle that sets selectedFolders[i] to that toggle
-            bool thisToggle = GUILayout.Toggle(selectedFolders[i], folderNames[i], GUILayout.Width(20));
-            Debug.Log("Current toggle: " + thisToggle);
+            bool thisToggle = GUILayout.Toggle(selectedFolders[i], "", GUILayout.Width(20));
+            
+            selectedFolders[i] = thisToggle;
+            
+            Debug.Log("Current toggle: " + selectedFolders[i]);
             
             
             GUILayout.EndHorizontal();
