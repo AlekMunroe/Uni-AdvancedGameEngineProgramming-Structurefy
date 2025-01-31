@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33714207ad0202c419142573e6e74a38, type: 3}
+  m_Name: todo
+  m_EditorClassIdentifier: 
+  Entries:
+  - Text: ': Add a check if the name exists on a line'
+    Note: 
+    Tag: TODO
+    File: /Users/alekfarooq/Documents/Unity Projects/Uni-AdvancedGameEngineProgramming-Structurefy/Assets/Structurefy/Scripts/EditorUI/FolderConfigEditor.cs
+    Line: 105
+    PathToShow: Assets/Structurefy/Scripts/EditorUI/FolderConfigEditor.cs(105)
+  - Text: ': Read folder names from file and add via folderNames.add(nameInFile[i])'
+    Note: 
+    Tag: TODO
+    File: /Users/alekfarooq/Documents/Unity Projects/Uni-AdvancedGameEngineProgramming-Structurefy/Assets/Structurefy/Scripts/EditorUI/FolderGeneratorEditor.cs
+    Line: 51
+    PathToShow: Assets/Structurefy/Scripts/EditorUI/FolderGeneratorEditor.cs(51)
+  - Text: ': For each item in the list, create a GUILayout.Label(folderName[i])'
+    Note: 
+    Tag: TODO
+    File: /Users/alekfarooq/Documents/Unity Projects/Uni-AdvancedGameEngineProgramming-Structurefy/Assets/Structurefy/Scripts/EditorUI/FolderGeneratorEditor.cs
+    Line: 53
+    PathToShow: Assets/Structurefy/Scripts/EditorUI/FolderGeneratorEditor.cs(53)
+  - Text: ': Show a toggle next to each label'
+    Note: 
+    Tag: TODO
+    File: /Users/alekfarooq/Documents/Unity Projects/Uni-AdvancedGameEngineProgramming-Structurefy/Assets/Structurefy/Scripts/EditorUI/FolderGeneratorEditor.cs
+    Line: 57
+    PathToShow: Assets/Structurefy/Scripts/EditorUI/FolderGeneratorEditor.cs(57)
+  - Text: ': This might loop due to it being called from within OnGUI()'
+    Note: 
+    Tag: BUG
+    File: /Users/alekfarooq/Documents/Unity Projects/Uni-AdvancedGameEngineProgramming-Structurefy/Assets/Structurefy/Scripts/EditorUI/FolderGeneratorEditor.cs
+    Line: 95
+    PathToShow: Assets/Structurefy/Scripts/EditorUI/FolderGeneratorEditor.cs(95)
+  TagsList:
+  - TODO
+  - BUG

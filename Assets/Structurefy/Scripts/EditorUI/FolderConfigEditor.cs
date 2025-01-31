@@ -1,8 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEditor;
+using System.Linq;
+using Unity.VisualScripting;
 
 public class FolderConfigEditor : EditorWindow
 {
@@ -62,9 +65,44 @@ public class FolderConfigEditor : EditorWindow
 
     private void SaveConfig()
     {
+        //The list of folders
         string[] foldersArray = folderNames.ToArray();
-        Debug.Log("Not implemented: Saved config \n " +
-                  "Folders: " + string.Join(", ", foldersArray) + "\n " +
-                  "File name: " + configName);
+
+        //The path to all the "Folders" config files
+        string configPath = Application.dataPath + "/Structurefy/Configs/Folders/";
+        
+        //Check if the folder exists
+        if (System.IO.Directory.Exists(configPath))
+        {
+            //The file path and name
+            string filePath = configPath + configName + ".sfconf";
+
+            //Create the file if it does not exist
+            if (!File.Exists(filePath))
+            {
+                File.WriteAllText(filePath, string.Empty); //Creates an empty .sfconf file
+                Debug.Log("Generated file: " + filePath);
+            }
+            else
+            {
+                Debug.LogWarning("Folder exists, you cannot overwrite existing files.");
+                
+                //End this loop
+                return;
+            }
+
+            //Refresh the assets folder to immediately show the changes
+            AssetDatabase.Refresh();
+
+            //Open the file in "Append mode" and write to the next line
+            using (StreamWriter writer = new StreamWriter(filePath, true))
+            {
+                //Loop through all the folder names and write them
+                for (int i = 0; i < foldersArray.Length; i++)
+                {
+                    writer.WriteLine(foldersArray[i]);
+                }
+            }
+        }
     }
 }

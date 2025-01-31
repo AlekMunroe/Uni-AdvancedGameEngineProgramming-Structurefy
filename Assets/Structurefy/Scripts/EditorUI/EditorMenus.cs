@@ -6,6 +6,7 @@ using UnityEditor;
 public class EditorMenus : EditorWindow
 {
     [MenuItem("Tools/Structurefy/Generate Folders")]
+    
     public static void GenerateFolders()
     {
         //Create a temporary gameobject to hold the script
