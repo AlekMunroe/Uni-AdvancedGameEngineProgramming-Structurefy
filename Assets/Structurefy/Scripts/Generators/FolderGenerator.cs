@@ -42,8 +42,8 @@ public class FolderGenerator : MonoBehaviour
             //Check if the folder exists so it can be ignored
             if (System.IO.Directory.Exists(folderPath))
             {
-                Debug.LogWarning("Folder " + folderName + " already exists");
-                
+                Debug.Log("Folder " + folderName + " already exists§");
+
             }
             else
             {

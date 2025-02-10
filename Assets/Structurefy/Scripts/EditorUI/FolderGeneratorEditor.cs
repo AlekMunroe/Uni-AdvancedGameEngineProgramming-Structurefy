@@ -14,7 +14,7 @@ public class FolderGeneratorEditor : EditorWindow
     private List<string> folderNames = new List<string>();
     private bool[] selectedFolders;
     
-    private char[] invalidChars = { '#', '%', '&', '{', '}', '\\', '<', '>', '*', '?', '/', '$', '!', '\'', '"', ':', '@', '+', '`', '|', '=', '~' };
+    private char[] invalidChars = { '#', '%', '&', '{', '}', '\\', '<', '>', '*', '?', '$', '!', '\'', '"', ':', '@', '+', '`', '|', '=', '~' };
     
     [MenuItem("Tools/Structurefy/Folder Generator Window")]
     public static void ShowWindow()
@@ -48,13 +48,6 @@ public class FolderGeneratorEditor : EditorWindow
 
         ReadAndSaveFolderNames();
         
-        //TODO: Read folder names from file and add via folderNames.add(nameInFile[i])
-        
-        //TODO: For each item in the list, create a GUILayout.Label(folderName[i])
-        
-        
-        
-        //TODO: Show a toggle next to each label
 
         GUILayout.EndHorizontal();
         
@@ -92,9 +85,6 @@ public class FolderGeneratorEditor : EditorWindow
 
     void PopulateList()
     {
-        //BUG: This might loop due to it being called from within OnGUI()
-            //Update it by calling this function on awake/refresh
-            
         //Find the config files in /Structurefy/Configs/Folders
         string[] folderPaths = Directory.GetFiles(Application.dataPath + "/Structurefy/Configs/Folders", "*.sfconf", SearchOption.AllDirectories);
 
@@ -173,7 +163,6 @@ public class FolderGeneratorEditor : EditorWindow
             //Check for any characters that cannot be in a folder name
             foreach (char c in folderName)
             {
-                Debug.Log("Looping through characters");
                 if (invalidChars.Contains(c) || char.IsSurrogate(c) || char.IsSymbol(c))
                 {
                     Debug.LogWarning("Folder " + folderName + "has invalid characters");

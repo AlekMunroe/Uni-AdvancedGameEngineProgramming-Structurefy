@@ -13,36 +13,12 @@ MonoBehaviour:
   m_Name: todo
   m_EditorClassIdentifier: 
   Entries:
-  - Text: ': Add a check if the name exists on a line'
+  - Text: ': Implement generating scenes'
     Note: 
     Tag: TODO
-    File: /Users/alekfarooq/Documents/Unity Projects/Uni-AdvancedGameEngineProgramming-Structurefy/Assets/Structurefy/Scripts/EditorUI/FolderConfigEditor.cs
-    Line: 105
-    PathToShow: Assets/Structurefy/Scripts/EditorUI/FolderConfigEditor.cs(105)
-  - Text: ': Read folder names from file and add via folderNames.add(nameInFile[i])'
-    Note: 
-    Tag: TODO
-    File: /Users/alekfarooq/Documents/Unity Projects/Uni-AdvancedGameEngineProgramming-Structurefy/Assets/Structurefy/Scripts/EditorUI/FolderGeneratorEditor.cs
-    Line: 51
-    PathToShow: Assets/Structurefy/Scripts/EditorUI/FolderGeneratorEditor.cs(51)
-  - Text: ': For each item in the list, create a GUILayout.Label(folderName[i])'
-    Note: 
-    Tag: TODO
-    File: /Users/alekfarooq/Documents/Unity Projects/Uni-AdvancedGameEngineProgramming-Structurefy/Assets/Structurefy/Scripts/EditorUI/FolderGeneratorEditor.cs
-    Line: 53
-    PathToShow: Assets/Structurefy/Scripts/EditorUI/FolderGeneratorEditor.cs(53)
-  - Text: ': Show a toggle next to each label'
-    Note: 
-    Tag: TODO
-    File: /Users/alekfarooq/Documents/Unity Projects/Uni-AdvancedGameEngineProgramming-Structurefy/Assets/Structurefy/Scripts/EditorUI/FolderGeneratorEditor.cs
-    Line: 57
-    PathToShow: Assets/Structurefy/Scripts/EditorUI/FolderGeneratorEditor.cs(57)
-  - Text: ': This might loop due to it being called from within OnGUI()'
-    Note: 
-    Tag: BUG
-    File: /Users/alekfarooq/Documents/Unity Projects/Uni-AdvancedGameEngineProgramming-Structurefy/Assets/Structurefy/Scripts/EditorUI/FolderGeneratorEditor.cs
-    Line: 95
-    PathToShow: Assets/Structurefy/Scripts/EditorUI/FolderGeneratorEditor.cs(95)
+    File: /Users/alekfarooq/Documents/Unity Projects/Uni-AdvancedGameEngineProgramming-Structurefy/Assets/Structurefy/Scripts/EditorUI/EditorMenus.cs
+    Line: 28
+    PathToShow: Assets/Structurefy/Scripts/EditorUI/EditorMenus.cs(28)
   TagsList:
   - TODO
   - BUG

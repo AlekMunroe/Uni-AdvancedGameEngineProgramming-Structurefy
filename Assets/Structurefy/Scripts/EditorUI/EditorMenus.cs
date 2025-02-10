@@ -5,26 +5,12 @@ using UnityEditor;
 
 public class EditorMenus : EditorWindow
 {
-    [MenuItem("Tools/Structurefy/Generate Folders")]
-    
-    public static void GenerateFolders()
-    {
-        //Create a temporary gameobject to hold the script
-        GameObject tempGameObject = new GameObject("TempFolderGenerator");
-        FolderGenerator folderGenerator = tempGameObject.AddComponent<FolderGenerator>();
-        
-        //Update the array
-        folderGenerator.folderNames = new string[] { "Folder1", "Folder Two", "Folder 3", "Folder Four" };
-        
-        folderGenerator.GenerateFolders();
-        
-        //Destroy the GameObject after it is used
-        GameObject.DestroyImmediate(tempGameObject);
-    }
+    //TODO: Remove this script entirely. This script is staying as of 06/02/2025 to remind myself to generate scenes
 
-    [MenuItem("Tools/Structurefy/Generate Scene")]
+    [MenuItem("Tools/Structurefy/[REMINDER] Generate Scene")]
     public static void GenerateScene()
     {
+        //TODO: Implement generating scenes
         Debug.Log("Not implemented: Generating scene");
     }
 }
