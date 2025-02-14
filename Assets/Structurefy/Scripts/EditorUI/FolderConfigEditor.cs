@@ -7,11 +7,17 @@ using UnityEditor;
 using System.Linq;
 using Unity.VisualScripting;
 
+/// <summary>
+/// An editor window to create and generate .sfconfig files
+/// </summary>
 public class FolderConfigEditor : EditorWindow
 {
     private List<string> folderNames = new List<string>();
     private string configName;
     
+    /// <summary>
+    /// Shows the FolderConfigEditor window in Unity
+    /// </summary>
     [MenuItem("Tools/Structurefy/Create Config")]
     public static void ShowWindow()
     {
@@ -22,6 +28,9 @@ public class FolderConfigEditor : EditorWindow
         window.titleContent = new GUIContent("Create Config");
     }
 
+    /// <summary>
+    /// Used for rendering all the UI elements for the window
+    /// </summary>
     private void OnGUI()
     {
         GUILayout.Label("Add Folders", EditorStyles.boldLabel);
@@ -63,6 +72,9 @@ public class FolderConfigEditor : EditorWindow
         }
     }
 
+    /// <summary>
+    /// Saves the list of folder names to a .sfconfig file
+    /// </summary>
     private void SaveConfig()
     {
         //The list of folders
@@ -77,18 +89,23 @@ public class FolderConfigEditor : EditorWindow
             //The file path and name
             string filePath = configPath + configName + ".sfconf";
 
+            bool userOverwriteConfirmation = false;
             //Create the file if it does not exist
-            if (!File.Exists(filePath))
+            if (File.Exists(filePath))
             {
-                File.WriteAllText(filePath, string.Empty); //Creates an empty .sfconf file
-                Debug.Log("Generated file: " + filePath);
+                //The file exists, prompt for confirmation
+                userOverwriteConfirmation = EditorUtility.DisplayDialog("Config Exists", "A .sfconfig file with the same name exists. Do you want to overwrite it?", "Yes", "No");
             }
             else
             {
-                Debug.LogWarning("Folder exists, you cannot overwrite existing files.");
-                
-                //End this loop
-                return;
+                //The file does not exist, automatically generate the file
+                userOverwriteConfirmation = true;
+            }
+
+            if (userOverwriteConfirmation)
+            {
+                File.WriteAllText(filePath, string.Empty); //Creates an empty .sfconf file
+                Debug.Log("Generated file: " + filePath);
             }
 
             //Refresh the assets folder to immediately show the changes

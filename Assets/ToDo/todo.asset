@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: todo
   m_EditorClassIdentifier: 
   Entries:
-  - Text: ': Implement generating scenes'
+  - Text: ': Add a confirmation button to override an existing file if it exists'
     Note: 
     Tag: TODO
-    File: /Users/alekfarooq/Documents/Unity Projects/Uni-AdvancedGameEngineProgramming-Structurefy/Assets/Structurefy/Scripts/EditorUI/EditorMenus.cs
-    Line: 28
-    PathToShow: Assets/Structurefy/Scripts/EditorUI/EditorMenus.cs(28)
+    File: /Users/alekfarooq/Documents/Unity Projects/Uni-AdvancedGameEngineProgramming-Structurefy/Assets/Structurefy/Scripts/EditorUI/SceneGeneratorEditor.cs
+    Line: 80
+    PathToShow: Assets/Structurefy/Scripts/EditorUI/SceneGeneratorEditor.cs(80)
   TagsList:
   - TODO
   - BUG

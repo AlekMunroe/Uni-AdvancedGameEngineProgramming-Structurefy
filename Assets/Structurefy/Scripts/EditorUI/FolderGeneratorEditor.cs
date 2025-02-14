@@ -6,6 +6,9 @@ using UnityEditor;
 using System.IO;
 using System.Linq;
 
+/// <summary>
+/// An editor window to generate folders based on .sfconfig files
+/// </summary>
 public class FolderGeneratorEditor : EditorWindow
 {
     private string[] sfconfFiles = new string[0];
@@ -16,6 +19,9 @@ public class FolderGeneratorEditor : EditorWindow
     
     private char[] invalidChars = { '#', '%', '&', '{', '}', '\\', '<', '>', '*', '?', '$', '!', '\'', '"', ':', '@', '+', '`', '|', '=', '~' };
     
+    /// <summary>
+    /// Shows the FolderGeneratorEditor window in Unity
+    /// </summary>
     [MenuItem("Tools/Structurefy/Folder Generator Window")]
     public static void ShowWindow()
     {
@@ -24,11 +30,9 @@ public class FolderGeneratorEditor : EditorWindow
         window.titleContent = new GUIContent("Folder Generator");
     }
 
-    private void OnEnable()
-    {
-        
-    }
-
+    /// <summary>
+    /// Used for rendering all the UI elements for the window
+    /// </summary>
     private void OnGUI()
     {
         PopulateList();
@@ -83,6 +87,9 @@ public class FolderGeneratorEditor : EditorWindow
         }
     }
 
+    /// <summary>
+    /// This populates the list of .sfconfig files in /Stucturefy/Configs/Folders
+    /// </summary>
     void PopulateList()
     {
         //Find the config files in /Structurefy/Configs/Folders
@@ -103,6 +110,9 @@ public class FolderGeneratorEditor : EditorWindow
         }
     }
 
+    /// <summary>
+    /// This reads the chosen .sfconfig file and gets the folder names to be generated
+    /// </summary>
     void ReadAndSaveFolderNames()
     {
         if (sfconfFiles.Length == 0 || sfconfFiles[0] == "No files found")
@@ -144,6 +154,9 @@ public class FolderGeneratorEditor : EditorWindow
         }
     }
 
+    /// <summary>
+    /// This generates folder names which are in the .sfconfig file
+    /// </summary>
     void GenerateFolders()
     {
         for (int i = 0; i < folderNames.Count; i++)
@@ -185,7 +198,7 @@ public class FolderGeneratorEditor : EditorWindow
             //Check if the folder exists so it can be ignored
             if (System.IO.Directory.Exists(folderPath))
             {
-                Debug.LogWarning("Folder " + folderName + " already exists");
+                Debug.LogWarning("Folder " + folderName + " already exists. Ignoring.");
                 
             }
             else
